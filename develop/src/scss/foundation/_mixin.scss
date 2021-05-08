@@ -1,0 +1,47 @@
+@use "variable" as f-variable;
+
+/* -------------------------------
+ *  media query
+ * ---------------------------- */
+@mixin media-query($breakpoint-key, $rule: max) {
+  @if $rule == max {
+    @media (max-width: #{map-get(f-variable.$breakpoint-list, $breakpoint-key)}px) {
+      @content;
+    }  
+  } @else if $rule == min {
+    @media (min-width: calc(#{map-get(f-variable.$breakpoint-list, $breakpoint-key)}px + 1px)) {
+      @content;
+    }
+  }
+}
+
+/* -------------------------------
+ *  hack
+ * ---------------------------- */
+@mixin hack-ie11 {
+  @media all and (-ms-high-contrast:none) {
+    *::-ms-backdrop, body {
+      @content;
+    }
+  }
+}
+@mixin hack-edge {
+  @supports (-ms-ime-align:auto) {
+    @content;
+  }
+}
+@mixin hack-firefox {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+@mixin hack-chrome {
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @content;
+  }
+}
+@mixin hack-safari {
+  _::-webkit-full-page-media, _:future, :root body {
+    @content;
+  }
+}
