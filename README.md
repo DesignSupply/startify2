@@ -1,6 +1,6 @@
 # Startify2
 
-Startify2はウェブサイトを作成するために必要なリソースがひととおり揃った静的コーディングの開発環境です。デザインから静的コーディングまでシンプルなウェブページから、jQueryやVue.jsなどのJavaScriptのライブラリやフレームワークを使ったウェブアプリケーションもワンストップで、タスクランナーのwebpackを使って効率よく作成できます。
+Startify2はウェブサイトを作成するために必要なリソースがひととおり揃った静的コーディングの開発環境です。デザインから静的コーディングまでシンプルなウェブページから、jQueryやVue.jsなどのJavaScriptのライブラリやフレームワークを使ったウェブアプリケーションもワンストップで、バンドルツールのwebpackを使って効率よく作成できます。
 
 
 
@@ -9,17 +9,16 @@ Startify2はウェブサイトを作成するために必要なリソースが�
 Startify2で主に出来ることは以下になります。
 
 * Sketch、Adobe XD、Figmaに対応したデザインガイドライン付きページデザインテンプレート
-* Gulpを使ったタスクの自動検知
+* webpackを使ったファイル編集の自動検知
 * Pugを使ったHTMLマークアップと自動整形および外部データ読み込み
 * Sass（SCSS記法・SASS記法）のコンパイル
-* CSSLintでのCSSバリデーションチェック
-* ESLintでのJavaScript（ECMAScript）バリデーションチェック
+* StyleLintでのCSSバリデーションチェック
+* ESLintでのTypeScriptおよびJavaScript（ECMAScript）バリデーションチェック
 * デザインテンプレートのフォーマットに合わせたSass変数およびmixinの使用
 * Autoprefixerを使ったベンダープレフィックスの自動付与
 * Babelを使ったJavaScript（ECMAScript）のトランスパイル
-* webpack環境でのTypeScriptのコンパイル（本番環境用・開発環境用）
+* webpackを使ったTypeScriptのコンパイル（本番環境用・開発環境用）
 * jQueryライブラリの使用（ECMAScript・TypeScript）
-* Vue.jsライブラリの使用（ECMAScript・TypeScript）
 * ソースコードのマッピングファイルの生成
 * CSS、JavaScriptファイルの自動minify化
 * 開発用ローカルサーバーの起動とBrowsersyncでの自動リロード
@@ -72,7 +71,7 @@ $ npm install
 
 ### 各種コマンド
 
-#### 1. 開発環境webpack監視
+#### 1. 開発環境用ファイル編集の監視
 ```bash
 $ npm run dev
 ```
