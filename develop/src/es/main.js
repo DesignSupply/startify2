@@ -5,7 +5,7 @@ import '../sass/main.sass';
 // import '../scss/main.scss';
 
 const $ = require('jQuery');
-// const Vue = require('vue');
+const Vue = require('vue');
 
 // checking legacy IE
 const isLegacyIE = () => {
@@ -79,19 +79,19 @@ $(function() {
 });
 
 // Vue.js
-// const vueModel = new Vue({
-//   el: '#app',
-//   data() {
-//     return {
-//       message: 'Vue.js is ready.'
-//     }
-//   },
-//   created() {
-//     this.showMessage();
-//   },
-//   methods: {
-//     showMessage() {
-//       console.log(this.message);
-//     }
-//   }
-// });
+const vueModel = new Vue({
+  el: '#app',
+  data() {
+    return {
+      message: 'Vue.js is ready.'
+    }
+  },
+  created() {
+    this.showMessage();
+  },
+  methods: {
+    showMessage() {
+      console.log(this.message);
+    }
+  }
+});

@@ -5,6 +5,7 @@ import '../sass/main.sass';
 // import '../scss/main.scss';
 
 import $ from 'jquery';
+import Vue from 'vue';
 import moduleFunction from './modules/module';
 
 console.log(moduleFunction('Hello World!'));
@@ -78,4 +79,22 @@ findBrowser();
 // jQuery
 $(function(){
   console.log('jQuery is ready.');
- });
+});
+
+// Vue.js
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      message: 'Vue.js is ready.'
+    }
+  },
+  created() {
+    (this as any).showMessage();
+  },
+  methods: {
+    showMessage(): void {
+      console.log((this as any).message);
+    }
+  }
+});

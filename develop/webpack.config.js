@@ -64,6 +64,11 @@ const buildDefault = {
         ]
       },
       {
+        test: /\.vue$/,
+        exclude: /node_modules/,
+        use: 'vue-loader'
+       },
+      {
         test: /\.(sass|scss)$/,
         exclude: /node_modules/,
         use: [
@@ -109,7 +114,8 @@ const buildDefault = {
     ]
   },
   resolve: {
-    extensions: [ '.ts', '.js' ]
+    alias: { 'vue$': 'vue/dist/vue.js' },
+    extensions: [ '.ts', '.js', '.vue' ]
   },
   plugins: [
     new ESLintPlugin({

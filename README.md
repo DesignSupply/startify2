@@ -19,6 +19,7 @@ Startify2で主に出来ることは以下になります。
 * Babelを使ったJavaScript（ECMAScript）のトランスパイル
 * webpackを使ったTypeScriptのコンパイル（本番環境用・開発環境用）
 * jQueryライブラリの使用（ECMAScript・TypeScript）
+* Vue.jsライブラリの使用（ECMAScript・TypeScript）
 * ソースコードのマッピングファイルの生成
 * CSS、JavaScriptファイルの自動minify化
 * 開発用ローカルサーバーの起動とBrowsersyncでの自動リロード
