@@ -4,7 +4,7 @@
 import '../sass/main.sass';
 // import '../scss/main.scss';
 
-// const $ = require('jQuery');
+const $ = require('jQuery');
 // const Vue = require('vue');
 
 // checking legacy IE
@@ -74,9 +74,9 @@ const findBrowser = () => {
 findBrowser();
 
 // jQuery
-// $(function() {
-//   console.log('jQuery is ready.');
-// });
+$(function() {
+  console.log('jQuery is ready.');
+});
 
 // Vue.js
 // const vueModel = new Vue({

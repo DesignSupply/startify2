@@ -4,6 +4,7 @@
 import '../sass/main.sass';
 // import '../scss/main.scss';
 
+import $ from 'jquery';
 import moduleFunction from './modules/module';
 
 console.log(moduleFunction('Hello World!'));
@@ -73,3 +74,8 @@ const findBrowser = (): string => {
   }
 };
 findBrowser();
+
+// jQuery
+$(function(){
+  console.log('jQuery is ready.');
+ });
