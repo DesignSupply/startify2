@@ -1,6 +1,7 @@
 // modules include
 const path = require('path');
 const globule = require('globule');
+const ESLintPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -23,9 +24,7 @@ const directoryPath = {
 let styleLoader = null;
 let entryPointPath = null;
 const pugFiles = globule.find('src/pug/**/*.pug', {
-  ignore: [
-    'src/pug/**/_*.pug'
-  ]
+  ignore: [ 'src/pug/**/_*.pug' ]
 });
 if(cssInline) {
   styleLoader = 'style-loader';
@@ -113,8 +112,12 @@ const buildDefault = {
     extensions: [ '.ts', '.js' ]
   },
   plugins: [
+    new ESLintPlugin({
+      extensions: [ '.ts', '.js' ],
+      exclude: 'node_modules'
+    }),
     new MiniCssExtractPlugin({ filename: 'css/main.min.css' }),
-    new StylelintPlugin({ configFile: `${directoryPath.root}/.stylelintrc` }),
+    new StylelintPlugin({ configFile: `${directoryPath.root}/.stylelintrc.json` }),
     new BrowserSyncPlugin({
       host: 'localhost',
       port: 2000,
