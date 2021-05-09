@@ -4,7 +4,10 @@ const globule = require('globule');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
 
 // build settings
 const buildMode = 'development'; // production or development
@@ -114,8 +117,34 @@ const buildDefault = {
     new StylelintPlugin({ configFile: `${directoryPath.root}/.stylelintrc` }),
     new BrowserSyncPlugin({
       host: 'localhost',
-      port: 3000,
+      port: 2000,
       server: { baseDir: directoryPath.dist }
+    }),
+    new CopyPlugin({
+      patterns: [
+        { 
+          from: `${directoryPath.src}/images`, 
+          to: `${directoryPath.dist}/assets/img/_min/[name]_min[ext]`
+        }
+      ]
+    }),
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      plugins: [
+        ImageminMozjpeg({
+          quality: 85,
+          progressive: true,
+        }),
+      ],
+      pngquant: {
+        quality: '70-85',
+      },
+      gifsicle: {
+        interlaced: false,
+        optimizationLevel: 10,
+        colors: 256,
+      },
+      svgo: {}
     })
   ],
   target: [ 'web', 'es5' ]
