@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
@@ -48,12 +49,15 @@ const buildDefault = {
     rules: [
       {
         test: /\.ts$/,
-        exclude: /node_modules/,
-        use: 'ts-loader'
+        use: {
+          loader: 'ts-loader',
+          options: {
+            appendTsSuffixTo: [/\.vue$/]
+          }
+        }
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
         use: [
           {
             loader: 'babel-loader',
@@ -65,12 +69,10 @@ const buildDefault = {
       },
       {
         test: /\.vue$/,
-        exclude: /node_modules/,
         use: 'vue-loader'
-       },
+      },
       {
         test: /\.(sass|scss)$/,
-        exclude: /node_modules/,
         use: [
           styleLoader,
           {
@@ -99,6 +101,13 @@ const buildDefault = {
         ]
       },
       {
+        test: /.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+        ]
+      },
+      {
         test: /\.pug$/,
         exclude: /node_modules/,
         use: [
@@ -115,7 +124,7 @@ const buildDefault = {
   },
   resolve: {
     alias: { 'vue$': 'vue/dist/vue.js' },
-    extensions: [ '.ts', '.js', '.vue' ]
+    extensions: [ '.ts', '.js', '.vue', '.json' ]
   },
   plugins: [
     new ESLintPlugin({
@@ -129,6 +138,7 @@ const buildDefault = {
       port: 2000,
       server: { baseDir: directoryPath.dist }
     }),
+    new VueLoaderPlugin(),
     new CopyPlugin({
       patterns: [
         { 

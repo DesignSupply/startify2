@@ -7,13 +7,14 @@ import '../sass/main.sass';
 import $ from 'jquery';
 import Vue from 'vue';
 import moduleFunction from './modules/module';
+import App from './vue/app.vue';
 
-console.log(moduleFunction('Hello World!'));
+console.log(moduleFunction('Hello World! use TypeScript'));
 
 // checking legacy IE
 const isLegacyIE = (): void | boolean => {
   const currentUserAgent: string = window.navigator.userAgent.toLowerCase(),
-    notice: string = 'ご利用のウェブブラウザでは当サイトを正常に閲覧できません。ブラウザのバージョンを最新にして再度アクセスしてください。',
+    notice = 'ご利用のウェブブラウザでは当サイトを正常に閲覧できません。ブラウザのバージョンを最新にして再度アクセスしてください。',
     targets: Array<string> = [ 
       'msie 6.0', // Internet Explorer 6
       'msie 7.0', // Internet Explorer 7
@@ -82,19 +83,4 @@ $(function(){
 });
 
 // Vue.js
-new Vue({
-  el: '#app',
-  data() {
-    return {
-      message: 'Vue.js is ready.'
-    }
-  },
-  created() {
-    (this as any).showMessage();
-  },
-  methods: {
-    showMessage(): void {
-      console.log((this as any).message);
-    }
-  }
-});
+new Vue(App).$mount('#app');
