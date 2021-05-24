@@ -4,6 +4,8 @@
 import '../sass/main.sass';
 // import '../scss/main.scss';
 
+import App from './vue/app.vue';
+
 const $ = require('jQuery');
 const Vue = require('vue');
 
@@ -79,19 +81,4 @@ $(function() {
 });
 
 // Vue.js
-const vueModel = new Vue({
-  el: '#app',
-  data() {
-    return {
-      message: 'Vue.js is ready.'
-    }
-  },
-  created() {
-    this.showMessage();
-  },
-  methods: {
-    showMessage() {
-      console.log(this.message);
-    }
-  }
-});
+new Vue(App).$mount('#app');
