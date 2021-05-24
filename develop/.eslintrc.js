@@ -1,4 +1,34 @@
-module.exports = {
+const useTypeScript = true;
+
+const lintEs = {
+  env: {
+    'browser': true,
+    'jquery': true,
+    'node': true,
+    'es6': true
+  },
+  globals: {
+  },
+  parserOptions: {
+    'sourceType': 'module',
+    'ecmaVersion': 2015
+  },
+  rules: {
+    'no-console': 'warn',
+    'no-extra-semi': 'warn',
+    'no-undef': 'warn',
+    'quotes': [
+      'warn', 'single'
+    ],
+    'space-before-blocks': [
+      'warn', { 
+        'functions': 'always' 
+      }
+    ] 
+  }
+};
+
+const lintTs = {
   root: true,
   env: {
     es6: true,
@@ -24,3 +54,12 @@ module.exports = {
   rules: {
   },
 };
+
+let config = null;
+if(useTypeScript) {
+  config = lintTs;
+} else {
+  config = lintEs;
+}
+
+module.exports = config;
