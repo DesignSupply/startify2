@@ -55,11 +55,4 @@ const lintTs = {
   },
 };
 
-let config = null;
-if(useTypeScript) {
-  config = lintTs;
-} else {
-  config = lintEs;
-}
-
-module.exports = config;
+module.exports = useTypeScript ? lintTs : lintEs;
