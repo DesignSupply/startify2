@@ -18,7 +18,11 @@ $(function() {
 });
 
 // Intersection Observer
-new IntersectionObserverToggleClass('.observe_target', 'observed', true);
+new IntersectionObserverToggleClass({
+  selector: '.observe_target', 
+  className: 'observed', 
+  toggle: true
+});
 
 // checking legacy IE
 const isLegacyIE = () => {

@@ -1,9 +1,9 @@
 export class IntersectionObserverToggleClass {
 
-  constructor(selector, className, toggle) {
-    this.selector = selector;
-    this.className = className;
-    this.toggle = toggle;
+  constructor(settings) {
+    this.selector = settings.selector;
+    this.className = settings.className;
+    this.toggle = settings.toggle;
     this.doObserve = (element) => {
       const targets = document.querySelectorAll(element);
       const options = {
