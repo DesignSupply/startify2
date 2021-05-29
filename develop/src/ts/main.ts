@@ -9,6 +9,14 @@ import Vue from 'vue';
 import moduleFunction from './modules/module';
 import App from './vue/app.vue';
 
+// Vue.js
+new Vue(App).$mount('#app');
+
+// jQuery
+$(function(){
+  console.log('jQuery is ready.');
+});
+
 console.log(moduleFunction('Hello World! use TypeScript'));
 
 // checking legacy IE
@@ -76,11 +84,3 @@ const findBrowser = (): string => {
   }
 };
 findBrowser();
-
-// jQuery
-$(function(){
-  console.log('jQuery is ready.');
-});
-
-// Vue.js
-new Vue(App).$mount('#app');

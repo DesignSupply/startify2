@@ -5,9 +5,16 @@ import '../sass/main.sass';
 // import '../scss/main.scss';
 
 import App from './vue/app.vue';
-
 const $ = require('jQuery');
 const Vue = require('vue');
+
+// Vue.js
+new Vue(App).$mount('#app');
+
+// jQuery
+$(function() {
+  console.log('jQuery is ready.');
+});
 
 // checking legacy IE
 const isLegacyIE = () => {
@@ -74,11 +81,3 @@ const findBrowser = () => {
   }
 };
 findBrowser();
-
-// jQuery
-$(function() {
-  console.log('jQuery is ready.');
-});
-
-// Vue.js
-new Vue(App).$mount('#app');
