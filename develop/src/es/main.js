@@ -5,6 +5,7 @@ import '../sass/main.sass';
 // import '../scss/main.scss';
 
 import App from './vue/app.vue';
+import { IntersectionObserverToggleClass } from './modules/class-intersection-observer-toggleclass.js';
 const $ = require('jQuery');
 const Vue = require('vue');
 
@@ -15,6 +16,9 @@ new Vue(App).$mount('#app');
 $(function() {
   console.log('jQuery is ready.');
 });
+
+// Intersection Observer
+new IntersectionObserverToggleClass('.observe_target', 'observed', true);
 
 // checking legacy IE
 const isLegacyIE = () => {
