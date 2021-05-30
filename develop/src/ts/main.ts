@@ -7,7 +7,7 @@ import '../sass/main.sass';
 import $ from 'jquery';
 import Vue from 'vue';
 import moduleFunction from './modules/module';
-import {IntersectionObserverToggleClass} from './modules/class-intersection-observer-toggleclass';
+import { IntersectionObserverToggleClass } from './modules/class-intersection-observer-toggleclass';
 import App from './vue/app.vue';
 
 // Vue.js
