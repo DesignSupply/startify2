@@ -4,7 +4,7 @@
     components: {}
   })
   export default class vueModel extends Vue {
-    message: string = 'Vue.js is ready';
+    message: string = 'Vue.js is ready use TypeScript';
     mounted(): void {
       this.showMessage();
     }

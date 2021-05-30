@@ -7,6 +7,7 @@ import '../sass/main.sass';
 import $ from 'jquery';
 import Vue from 'vue';
 import moduleFunction from './modules/module';
+import {IntersectionObserverToggleClass} from './modules/class-intersection-observer-toggleclass';
 import App from './vue/app.vue';
 
 // Vue.js
@@ -14,7 +15,14 @@ new Vue(App).$mount('#app');
 
 // jQuery
 $(function(){
-  console.log('jQuery is ready.');
+  console.log('jQuery is ready. use TypeScript');
+});
+
+// Intersection Observer
+new IntersectionObserverToggleClass({
+  selector: '.observe_target', 
+  className: 'observed', 
+  toggle: true
 });
 
 console.log(moduleFunction('Hello World! use TypeScript'));
