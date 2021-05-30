@@ -52,6 +52,20 @@ const lintTs = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
   ],
   rules: {
+    'no-console': 'warn',
+    'no-extra-semi': 'warn',
+    'no-undef': 'warn',
+    'quotes': [
+      'warn', 'single'
+    ],
+    'space-before-blocks': [
+      'warn', { 
+        'functions': 'always' 
+      }
+    ],
+    '@typescript-eslint/no-unsafe-call': 'warn',
+    '@typescript-eslint/no-unsafe-member-access': 'warn',
+    '@typescript-eslint/no-unsafe-return' : 'warn'
   },
 };
 
