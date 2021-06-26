@@ -72,6 +72,13 @@ const buildDefault = {
         use: 'vue-loader'
       },
       {
+        test: /.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ]
+      },
+      {
         test: /\.(sass|scss)$/,
         use: [
           styleLoader,
@@ -98,13 +105,6 @@ const buildDefault = {
             loader: 'sass-loader',
             options: { sourceMap: true }
           }
-        ]
-      },
-      {
-        test: /.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
         ]
       },
       {
