@@ -12,6 +12,20 @@
       @content
 
 /* -------------------------------
+ *  hover & focus
+ * ---------------------------- */
+=hover-style($disabled: false)
+  @media (hover: hover) and (pointer: fine)
+    &:hover
+      @content
+  @if $disabled
+    &:hover
+      @content
+=focus-style
+  &:focus
+    @content
+
+/* -------------------------------
  *  hack
  * ---------------------------- */
 =hack-ie11

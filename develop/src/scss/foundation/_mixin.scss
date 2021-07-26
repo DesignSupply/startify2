@@ -16,6 +16,27 @@
 }
 
 /* -------------------------------
+ *  hover & focus
+ * ---------------------------- */
+@mixin hover-style($disabled: false) {
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      @content;
+    }
+  }
+  @if $disabled {
+    &:hover {
+      @content;
+    }
+  }
+}
+@mixin focus-style {
+  &:focus {
+    @content;
+  }
+}
+
+/* -------------------------------
  *  hack
  * ---------------------------- */
 @mixin hack-ie11 {
