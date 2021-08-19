@@ -1,4 +1,4 @@
-@use "../foundation/import" as f
+@use "../foundation/import" as *
 
 /* -------------------------------
  *  html body
@@ -16,16 +16,16 @@ html
     line-height: var(--default-line-height)
     color: var(--default-color)
     font-feature-settings: "palt"
-  +f.media-query(sm)
+  +media-query(sm)
     body
-      font-size: f.responsive-font-size(16, f.$screen-sm)
-  +f.media-query(xs)
+      font-size: responsive-font-size(16, $screen-sm)
+  +media-query(xs)
     body
       font-size: var(--font-S)
 
 /* -------------------------------
  *  base layout
- * ---------------------------- */  
+ * ---------------------------- */
 
 /* -- config ------------------ */
 $header-min-height: auto
@@ -45,7 +45,7 @@ $footer-max-height: auto
 
 /* -------------------------------
  *  header
- * ---------------------------- */    
+ * ---------------------------- */
 .l-header
   grid-area: header
 
