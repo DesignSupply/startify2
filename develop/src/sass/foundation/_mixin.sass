@@ -59,6 +59,6 @@
 =hack-chrome
   @media screen and (-webkit-min-device-pixel-ratio: 0)
     @content
-=hack-safari
-  _::-webkit-full-page-media, _:future, :root body
+=hack-safari($selecter: "*.hack-safari")
+  _::-webkit-full-page-media, _:future, :root #{$selecter}
     @content

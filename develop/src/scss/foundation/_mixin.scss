@@ -82,8 +82,8 @@
     @content;
   }
 }
-@mixin hack-safari {
-  _::-webkit-full-page-media, _:future, :root body {
+@mixin hack-safari($selecter: "*.hack-safari") {
+  _::-webkit-full-page-media, _:future, :root #{$selecter} {
     @content;
   }
 }
