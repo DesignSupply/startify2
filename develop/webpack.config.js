@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 // modules include
 const path = require('path');
 const globule = require('globule');

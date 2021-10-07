@@ -16,7 +16,7 @@ import App from './vue/app.vue';
 new Vue(App).$mount('#app');
 
 // jQuery
-$(function(){
+$(function() {
   console.log('jQuery is ready. use TypeScript');
 });
 
