@@ -4,7 +4,8 @@
   "description": "Development environment for website creation with design and static coding.",
   "main": "main.js",
   "scripts": {
-    "dev": "webpack -w"
+    "dev": "webpack -w",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
