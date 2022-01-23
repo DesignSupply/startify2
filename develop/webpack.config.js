@@ -167,7 +167,11 @@ const buildDefault = {
       svgo: {}
     })
   ],
-  target: [ 'web', 'es5' ]
+  target: [ 'web', 'es5' ],
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  }
 }
 
 // page template output
