@@ -15,8 +15,8 @@ const ImageminMozjpeg = require('imagemin-mozjpeg');
 
 // build settings
 const buildMode = 'development'; // production or development
-const cssInline = false;
-const useTypeScript = true;
+const cssInline = false; // true->inlineCSS false->outputfile
+const useTypeScript = true; // true->TypeScript false->ECMAScript
 const directoryPath = {
   root: path.resolve(__dirname, ''),
   dist: path.resolve(__dirname, 'dist'),
@@ -124,7 +124,7 @@ const buildDefault = {
     ]
   },
   resolve: {
-    alias: { 'vue$': 'vue/dist/vue.js' },
+    alias: { 'vue$': 'vue/dist/vue.esm.js' },
     extensions: [ '.ts', '.js', '.vue', '.json' ]
   },
   plugins: [
