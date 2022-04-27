@@ -124,7 +124,7 @@ const buildDefault = {
     ]
   },
   resolve: {
-    alias: { 'vue$': 'vue/dist/vue.esm-browser.js' },
+    alias: { 'vue$': 'vue/dist/vue.esm-bundler.js' },
     extensions: [ '.ts', '.js', '.vue', '.json' ]
   },
   plugins: [
