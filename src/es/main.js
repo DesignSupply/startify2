@@ -4,7 +4,7 @@
 import '../sass/main.sass';
 // import '../scss/main.scss';
 
-import { createApp } from 'vue'
+import { createApp } from 'vue';
 import App from './vue/app.vue';
 import { IntersectionObserverToggleClass } from './modules/class-intersection-observer-toggleclass.js';
 import { IsLegacyIE } from './modules/checking-legacy-ie.js';
