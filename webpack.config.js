@@ -8,7 +8,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 const CopyPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
@@ -16,7 +16,7 @@ const ImageminMozjpeg = require('imagemin-mozjpeg');
 // build settings
 const buildMode = 'development'; // production or development
 const cssInline = false; // true->inlineCSS false->outputfile
-const useTypeScript = true; // true->TypeScript false->ECMAScript
+const useTypeScript = false; // true->TypeScript false->ECMAScript
 const directoryPath = {
   root: path.resolve(__dirname, ''),
   dist: path.resolve(__dirname, 'dist'),
@@ -124,7 +124,7 @@ const buildDefault = {
     ]
   },
   resolve: {
-    alias: { 'vue$': 'vue/dist/vue.esm.js' },
+    alias: { 'vue$': 'vue/dist/vue.esm-browser.js' },
     extensions: [ '.ts', '.js', '.vue', '.json' ]
   },
   plugins: [

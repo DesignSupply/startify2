@@ -4,7 +4,7 @@
 import '../sass/main.sass';
 // import '../scss/main.scss';
 
-import Vue from 'vue';
+import { createApp } from 'vue'
 import App from './vue/app.vue';
 import { IntersectionObserverToggleClass } from './modules/class-intersection-observer-toggleclass.js';
 import { IsLegacyIE } from './modules/checking-legacy-ie.js';
@@ -13,7 +13,8 @@ import { FindBrowser } from './modules/checking-browser.js';
 const $ = require('jQuery');
 
 // Vue.js
-new Vue(App).$mount('#app');
+const app = createApp(App);
+app.mount('#app');
 
 // jQuery
 $(function() {
