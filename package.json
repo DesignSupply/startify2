@@ -73,8 +73,5 @@
     "globule": "^1.3.2",
     "jquery": "^3.6.0",
     "vue": "^3.2.31"
-  },
-  "browser": {
-    "vue": "vue/dist/vue.cjs.js"
   }
 }

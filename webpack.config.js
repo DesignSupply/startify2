@@ -16,7 +16,7 @@ const ImageminMozjpeg = require('imagemin-mozjpeg');
 // build settings
 const buildMode = 'development'; // production or development
 const cssInline = false; // true->inlineCSS false->outputfile
-const useTypeScript = false; // true->TypeScript false->ECMAScript
+const useTypeScript = true; // true->TypeScript false->ECMAScript
 const directoryPath = {
   root: path.resolve(__dirname, ''),
   dist: path.resolve(__dirname, 'dist'),

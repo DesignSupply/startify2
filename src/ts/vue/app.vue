@@ -1,15 +1,17 @@
 <script lang="ts">
-  import { Component, Prop, Emit, Watch, Vue } from 'vue-property-decorator';
-  @Component({
-    components: {}
-  })
-  export default class vueModel extends Vue {
-    message: string = 'Vue.js is ready use TypeScript';
-    mounted(): void {
-      this.showMessage();
-    }
-    showMessage(): void {
-      console.log(this.message);
-    }
+  import { defineComponent, reactive, onMounted } from 'vue';
+  interface dataInterface {
+    message: string
   }
+  export default defineComponent({
+    setup() {
+      const data:dataInterface = reactive({ message: 'Vue.js is ready use TypeScript' });
+      const showMessage = ():void => {
+        console.log(data.message);
+      }
+      onMounted(():void => {
+        showMessage();
+      });
+    }
+  });
 </script>

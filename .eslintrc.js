@@ -1,4 +1,4 @@
-const useTypeScript = false; // true->TypeScript false->ECMAScript
+const useTypeScript = true; // true->TypeScript false->ECMAScript
 
 const lintEs = {
   env: {
@@ -66,6 +66,7 @@ const lintTs = {
     '@typescript-eslint/no-unsafe-call': 'warn',
     '@typescript-eslint/no-unsafe-member-access': 'warn',
     '@typescript-eslint/no-unsafe-return': 'warn',
+    '@typescript-eslint/no-unsafe-assignment': 'warn',
     '@typescript-eslint/no-explicit-any': 'warn'
   },
 };
