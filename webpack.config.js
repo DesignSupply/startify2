@@ -24,21 +24,11 @@ const directoryPath = {
 }
 
 // build configuration
-let styleLoader = null;
-let entryPointPath = null;
+const styleLoader = cssInline ? 'style-loader' : { loader: MiniCssExtractPlugin.loader };
+const entryPointPath = useTypeScript ? `${directoryPath.src}/ts/main.ts` : `${directoryPath.src}/es/main.js`;
 const pugFiles = globule.find('src/pug/**/*.pug', {
   ignore: [ 'src/pug/**/_*.pug' ]
 });
-if(cssInline) {
-  styleLoader = 'style-loader';
-} else {
-  styleLoader = { loader: MiniCssExtractPlugin.loader };
-}
-if(useTypeScript) {
-  entryPointPath = `${directoryPath.src}/ts/main.ts`;
-} else {
-  entryPointPath = `${directoryPath.src}/es/main.js`;
-}
 const buildDefault = {
   mode: buildMode,
   devtool: 'source-map',
@@ -76,8 +66,13 @@ const buildDefault = {
       {
         test: /.css$/,
         use: [
-          'vue-style-loader',
-          'css-loader'
+          styleLoader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false,
+            }
+          }
         ]
       },
       {
