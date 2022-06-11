@@ -43,6 +43,14 @@
     <meta name="description" content="サイトのトップページです">
     <link rel="canonical" href="https://example.com/">
     <title>サンプルサイト</title>
+    <script type="application/ld+json">
+      {
+        "@context":"http://schema.org",
+        "@type":"BreadcrumbList",
+        "itemListElement": [{"@type":"ListItem","position":1,"item":{"@id":"https://example.com/","name":"HOME"}}]
+      }
+      
+    </script>
   </head>
   <body class="page-home-body">
     <noscript>※当ウェブサイトを快適に閲覧して頂くためjavascriptを有効にしてください</noscript>
