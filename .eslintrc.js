@@ -11,7 +11,7 @@ const lintEs = {
   },
   parserOptions: {
     'sourceType': 'module',
-    'ecmaVersion': 2015
+    'ecmaVersion': 2019
   },
   rules: {
     'no-console': 'warn',
