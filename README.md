@@ -10,7 +10,8 @@ Startify2はウェブサイトを作成するために必要なリソースが�
 Startify2で主にできることは以下になります。
 
 * webpackを使ったファイル編集の自動検知
-* Pugを使ったHTMLマークアップと自動整形および外部データ読み込み
+* Pugを使ったHTMLマークアップと自動整形およびページメタデータ外部ファイル読み込み
+* ページテンプレートに対応したJSON-LD構造化データの設定（Pug）
 * Sass（SCSS記法・SASS記法）のコンパイル
 * StyleLintでのCSSバリデーションチェック
 * ESLintでのTypeScriptおよびJavaScript（ECMAScript）バリデーションチェック
