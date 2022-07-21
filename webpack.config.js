@@ -73,7 +73,7 @@ const buildDefault = {
         use: 'vue-loader'
       },
       {
-        test: /.css$/,
+        test: /\.css$/,
         use: [
           styleLoader,
           {
