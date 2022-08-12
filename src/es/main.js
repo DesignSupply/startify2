@@ -13,9 +13,10 @@ import { FindBrowser } from './modules/checking-browser.js';
 const $ = require('jQuery');
 
 // Vue.js
-const app = createApp(App);
-app.mount('#app');
-
+const app = createApp({});
+app.component('app', App)
+  .mount('#app');
+  
 // jQuery
 $(function() {
   console.log('jQuery is ready.');

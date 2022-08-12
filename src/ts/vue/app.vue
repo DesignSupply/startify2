@@ -1,3 +1,7 @@
+<template>
+  <h1>Startify 2</h1>
+</template>
+
 <script lang="ts">
   import { defineComponent, reactive, onMounted } from 'vue';
   interface dataInterface {
