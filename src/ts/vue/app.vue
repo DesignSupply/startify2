@@ -16,6 +16,10 @@
       onMounted(():void => {
         showMessage();
       });
+      return {
+        data,
+        showMessage
+      }
     }
   });
 </script>
