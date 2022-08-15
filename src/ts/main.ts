@@ -6,6 +6,7 @@ import '../sass/main.sass';
 
 import $ from 'jquery';
 import { createApp } from 'vue';
+import { store, key } from './store';
 import { IntersectionObserverToggleClass } from './modules/class-intersection-observer-toggleclass';
 import { IsLegacyIE } from './modules/checking-legacy-ie';
 import { FindOS } from './modules/checking-os';
@@ -15,6 +16,7 @@ import App from './vue/app.vue';
 // Vue.js
 const app = createApp({});
 app.component('app', App)
+  .use(store, key)
   .mount('#app');
 
 // jQuery
