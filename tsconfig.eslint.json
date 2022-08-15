@@ -3,6 +3,7 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.vue",
+    "types/**/*.ts",
     ".eslintrc.js",
     "webpack.config.js"
   ],

@@ -1,6 +1,6 @@
 {
   "files": [
-    "types.d.ts"
+    "types/vue.d.ts"
   ],
   "include": [
     "src/ts/**/*"

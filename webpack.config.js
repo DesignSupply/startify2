@@ -186,7 +186,7 @@ pugFiles.forEach((pug) => {
       inject: false,
       filename: `${directoryPath.dist}/${html}`,
       template: pug,
-      minify: false,
+      minify: buildMode === 'development' ? false : true,
       data: require(`${directoryPath.src}/pug/data/global.js`)
     })
   )
