@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { defineComponent, reactive, onMounted, computed } from 'vue';
+  import { reactive, onMounted, computed } from 'vue';
   import { useStore } from 'vuex';
   import { key } from '../store';
   interface dataInterface {
