@@ -14,12 +14,13 @@ Startify2で主にできることは以下になります。
 * ページテンプレートに対応したJSON-LD構造化データの設定（Pug）
 * Sass（SCSS記法・SASS記法）のコンパイル
 * StyleLintでのCSSバリデーションチェック
-* ESLintでのTypeScriptおよびJavaScript（ECMAScript）バリデーションチェック
+* ESLintでのTypeScriptおよびJavaScriptバリデーションチェック
 * Autoprefixerを使ったベンダープレフィックスの自動付与
-* Babelを使ったJavaScript（ECMAScript）のトランスパイル
+* Babelを使ったJavaScriptのトランスパイル
 * webpackを使ったTypeScriptのコンパイル（本番環境用・開発環境用）
-* jQueryライブラリの使用（ECMAScript・TypeScript）
-* Vue.jsライブラリの使用（ECMAScript・TypeScript）
+* jQueryライブラリの使用（JavaScript・TypeScript）
+* Vue.jsライブラリの使用（JavaScript・TypeScript）
+* Vuexを使ったアプリケーションの状態管理（JavaScript・TypeScript）
 * ソースコードのマッピングファイルの生成
 * CSS、JavaScriptファイルの自動minify化
 * 開発用ローカルサーバーの起動とBrowsersyncでの自動リロード
@@ -83,10 +84,11 @@ $ npm run build
 ## Note
 
 * タイトル、ディスクリプション、OGPなどページ固有のmeta要素はPugのソースファイルのデータ変数用スクリプトファイルで指定できます。
-* 初期設定ではJavaScript（ECMAScript）およびTypeScriptのコンパイル出力先が同じになりますので上書きにご注意ください。
+* 初期設定ではJavaScriptおよびTypeScriptのコンパイル出力先が同じになりますので上書きにご注意ください。
 * 初期設定ではSassのSCSS記法およびSASS記法のCSSファイル出力先が同じになりますので上書きにご注意ください。
 * 初期設定では〜IE11などのレガシーブラウザではページ表示時にアラートで警告が出るようになっています。
 * 初期設定では開発用ローカルサーバーのポート番号は2000となっています。
+* Vue.jsについてデフォルトでJavaScriptではOptionsAPIを使った指定、TypeScriptではCompositionAPIのsetup構文を使った指定となっています。
 
 
 
