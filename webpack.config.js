@@ -25,7 +25,7 @@ const directoryPath = {
 
 // build configuration
 const styleLoader = cssInline ? 'style-loader' : { loader: MiniCssExtractPlugin.loader };
-const entryPointPath = useTypeScript ? `${directoryPath.src}/ts/main.ts` : `${directoryPath.src}/es/main.js`;
+const entryPointPath = useTypeScript ? `${directoryPath.src}/ts/main.ts` : `${directoryPath.src}/js/main.js`;
 const pugFiles = globule.find('src/pug/**/*.pug', {
   ignore: [ 'src/pug/**/_*.pug' ]
 });
@@ -35,7 +35,7 @@ const buildDefault = {
   entry: entryPointPath,
   output: {
     path: `${directoryPath.dist}/assets`,
-    filename: 'js/main.min.js'
+    filename: 'scripts/main.min.js'
   },
   module: {
     rules: [
@@ -136,7 +136,7 @@ const buildDefault = {
       extensions: [ '.ts', '.js' ],
       exclude: 'node_modules'
     }),
-    new MiniCssExtractPlugin({ filename: 'css/main.min.css' }),
+    new MiniCssExtractPlugin({ filename: 'stylesheets/main.min.css' }),
     new StylelintPlugin({ configFile: `${directoryPath.root}/.stylelintrc.json` }),
     new BrowserSyncPlugin({
       host: 'localhost',
@@ -147,8 +147,8 @@ const buildDefault = {
     new CopyPlugin({
       patterns: [
         { 
-          from: `${directoryPath.src}/images`, 
-          to: `${directoryPath.dist}/assets/img/_min/[name]_min[ext]`
+          from: `${directoryPath.src}/img`, 
+          to: `${directoryPath.dist}/assets/images/_min/[name]_min[ext]`
         }
       ]
     }),

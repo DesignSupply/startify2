@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://startify2/./src/sass/main.sass"],"names":[],"mappings":"AAGA,KACE,cACF,C","file":"css/main.min.css","sourcesContent":["/* -------------------------------\n *  stylesheet (SASS)\n * ---------------------------- */\nbody\n  background: red"],"sourceRoot":""}
