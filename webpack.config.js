@@ -32,10 +32,12 @@ const pugFiles = globule.find('src/pug/**/*.pug', {
 const buildDefault = {
   mode: buildMode,
   devtool: 'source-map',
-  entry: entryPointPath,
+  entry: {
+    main: entryPointPath,
+  },
   output: {
     path: `${directoryPath.dist}/assets`,
-    filename: 'scripts/main.min.js'
+    filename: 'scripts/[name].min.js'
   },
   module: {
     rules: [
